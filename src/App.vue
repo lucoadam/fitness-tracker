@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-navbar toggleable="lg" type="dark" variant="info">
+      <b-navbar-brand to="/">Fitness Tracker</b-navbar-brand><b-navbar-toggle target="nav-collapse"></b-navbar-toggle><b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item to="/" :active="path  == '/'">Home</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+    <router-view />
   </div>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+</template><script>
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      path: this.$route && this.$route.path
+    };
+  },
+  watch: {
+    $route(route) {
+      this.path = route.path;
+    }
   }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+};
+</script><style lang="scss">
+.page {
+  padding: 20px;
+}button,
+.btn.btn-primary {
+  margin-right: 10px !important;
+}.button-toolbar {
+  margin-bottom: 10px;
 }
 </style>
