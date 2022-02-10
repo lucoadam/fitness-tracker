@@ -13,7 +13,7 @@
     "core-js": "^3.4.4",
     "json-server": "^0.15.1",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.1",
     "v-hotkey": "^0.7.1",
     "vee-validate": "^3.2.1",
